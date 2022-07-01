@@ -5,8 +5,11 @@ const { getNodeAutoInstrumentations } = require('@opentelemetry/auto-instrumenta
 const { OTLPTraceExporter } = require('@opentelemetry/exporter-otlp-grpc')
 const init = function (serviceName: string) {
   // Define traces
-  const traceExporter = new OTLPTraceExporter({})
-
+  const exporterOptions = {
+    url: 'http://34.121.101.97:4317',
+   }
+  const traceExporter = new OTLPTraceExporter(exporterOptions);
+  
   const sdk = new opentelemetry.NodeSDK({
     traceExporter,
     instrumentations: [getNodeAutoInstrumentations()],

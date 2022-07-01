@@ -3,13 +3,8 @@ import UserTable from './users.model'
 import OrdersTable from './orders.model'
 let db: any = new Object()
 const initializeDB = (cb) => {
-  const sequelize = new Sequelize('signoz', 'root', '', {
-    dialectOptions: {
-      ssl: {
-        require: false,
-        rejectUnauthorized: false,
-      },
-    },
+  const sequelize = new Sequelize('signoz', 'root', 'my-secret-pw', {
+    dialectOptions: { },
     host: '127.0.0.1',
     port: 3306,
     dialect: 'mysql',

@@ -4,9 +4,16 @@ This project demonstrates how to implement distributed tracing in node js with t
 ### Tracing flow
 ![Distributed tracing](service-flow.png)
 
-### Running the code
+### Prerequisetes
+
+Run a MySQL instance
+`docker run --name some-mysql  -p 3306:3306 -e MYSQL_ROOT_HOST=% -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mariadb:latest`
 
 Install all the dependencies by runing `npm install`
+
+Create a database called signoz in that mysql instance
+
+### Running the code
 
 Spin up the services
 
